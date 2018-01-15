@@ -60,3 +60,7 @@ personal changelog for mod "[sd] spaceship"
       							<Plasteel>10</Plasteel>
       							<Component>2</Component>
 	- changed sizes back to a17 values, new ship part has 1x1 same as computer core thingy (might cause error with ship quest???)
+
+- 15/01/2018
+
+	- added modsync
