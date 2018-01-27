@@ -5,160 +5,200 @@
  
 	<!--========================= no sequence tests! (conflicts if mods remove these vanilla lines) =============================-->
 	
+		<!-- if [XND] Ship Parts Refactored and [sd] spaceship is loaded message -->
+		
+		<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+			<operations>
+				<li Class="ModCheck.isModLoaded">
+					<modName>[XND] Ship Parts Refactored</modName>
+					<yourMod>[sd] spaceship</yourMod>
+					<customMessageSuccess>Found [XND] Ship Parts Refactored. [sd] spaceship skipping all size adjustment other then ship beam.</customMessageSuccess>
+				</li>				
+			</operations>
+		</Operation>
 	
 	<!--========================= vanilla Ship_Beam =============================-->
 	
-	<Operation Class="PatchOperationRemove">
-		<xpath>*/ThingDef[defName = "Ship_Beam"]/graphicData/drawSize</xpath>
-	</Operation>
+	<!-- always do -->
 	
-	<Operation Class="PatchOperationRemove">
-		<xpath>*/ThingDef[defName = "Ship_Beam"]/graphicData/damageData</xpath>
-	</Operation>
-	
-	
-	<Operation Class="PatchOperationReplace">
-		<xpath>*/ThingDef[defName = "Ship_Beam"]/passability</xpath>
-		<value>
-			<passability>PassThroughOnly</passability>
-		</value>
-	</Operation>
-	
-	<Operation Class="PatchOperationReplace">
-		<xpath>*/ThingDef[defName = "Ship_Beam"]/blockLight</xpath>
-		<value>
-			<blockLight>false</blockLight>
-		</value>
-	</Operation>
-	
-	<Operation Class="PatchOperationReplace">
-		<xpath>*/ThingDef[defName = "Ship_Beam"]/statBases/WorkToBuild</xpath>
-		<value>
-			<WorkToBuild>2000</WorkToBuild>
-		</value>
-	</Operation>
-	
-	<Operation Class="PatchOperationReplace">
-		<xpath>*/ThingDef[defName = "Ship_Beam"]/statBases/MaxHitPoints</xpath>
-		<value>
-			<MaxHitPoints>200</MaxHitPoints>
-		</value>
-	</Operation>
-	
-	<Operation Class="PatchOperationReplace">
-		<xpath>*/ThingDef[defName = "Ship_Beam"]/graphicData/texPath</xpath>
-		<value>
-			<texPath>sd_spaceship/dragable_beam/sd_spaceship_beamlink</texPath>
-		</value>
-	</Operation>
-	
-	<Operation Class="PatchOperationReplace">
-		<xpath>*/ThingDef[defName = "Ship_Beam"]/graphicData/graphicClass</xpath>
-		<value>
-			<graphicClass>Graphic_Single</graphicClass>
-		</value>
-	</Operation>
-	
-	<Operation Class="PatchOperationReplace">
-		<xpath>*/ThingDef[defName = "Ship_Beam"]/size</xpath>
-		<value>
-			<size>(1,1)</size>
-		</value>
-	</Operation>
-	
-	
-	<Operation Class="PatchOperationInsert">
-		<xpath>*/ThingDef[defName = "Ship_Beam"]/passability</xpath>
-		<value>
-			<pathCost>70</pathCost>
-		</value>
-	</Operation>
-	
-	<Operation Class="PatchOperationInsert">
-		<xpath>*/ThingDef[defName = "Ship_Beam"]/statBases/Flammability</xpath>
-		<value>
-			<Mass>1000</Mass>
-		</value>
-	</Operation>
-	
-	<Operation Class="PatchOperationInsert">
-		<xpath>*/ThingDef[defName = "Ship_Beam"]/graphicData/graphicClass</xpath>
-		<value>
-			<linkType>Basic</linkType>
-			<linkFlags>
-				<li>Custom1</li>
-			</linkFlags>
-		</value>
-	</Operation>
-	
-	<Operation Class="PatchOperationInsert">
-		<xpath>*/ThingDef[defName = "Ship_Beam"]/thingClass</xpath>
-		<value>
-			<uiIconPath>sd_spaceship/menu_icons/sd_spaceship_dragable_beam_menuicon</uiIconPath>
-		</value>
-	</Operation>
-	
-	<Operation Class="PatchOperationInsert">
-		<xpath>*/ThingDef[defName = "Ship_Beam"]/constructionSkillPrerequisite</xpath>
-		<value>
-			<minifiedDef>MinifiedFurniture</minifiedDef>
-			<placingDraggableDimensions>1</placingDraggableDimensions>
-			<selectable>true</selectable>
-			<rotatable>true</rotatable>
-		</value>
-	</Operation>
-	
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="ModCheck.FindFile">
+						<modName>Core</modName>
+						<file>Buildings_Ship.xml</file>
+			</li>
+			<li Class="PatchOperationRemove">
+				<xpath>*/ThingDef[defName = "Ship_Beam"]/graphicData/drawSize</xpath>
+			</li>
+			<li Class="PatchOperationRemove">
+				<xpath>*/ThingDef[defName = "Ship_Beam"]/graphicData/damageData</xpath>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>*/ThingDef[defName = "Ship_Beam"]/passability</xpath>
+				<value>
+					<passability>PassThroughOnly</passability>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>*/ThingDef[defName = "Ship_Beam"]/blockLight</xpath>
+				<value>
+					<blockLight>false</blockLight>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>*/ThingDef[defName = "Ship_Beam"]/statBases/WorkToBuild</xpath>
+				<value>
+					<WorkToBuild>2000</WorkToBuild>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>*/ThingDef[defName = "Ship_Beam"]/statBases/MaxHitPoints</xpath>
+				<value>
+					<MaxHitPoints>200</MaxHitPoints>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>*/ThingDef[defName = "Ship_Beam"]/graphicData/texPath</xpath>
+				<value>
+					<texPath>sd_spaceship/dragable_beam/sd_spaceship_beamlink</texPath>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>*/ThingDef[defName = "Ship_Beam"]/graphicData/graphicClass</xpath>
+				<value>
+					<graphicClass>Graphic_Single</graphicClass>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>*/ThingDef[defName = "Ship_Beam"]/size</xpath>
+				<value>
+					<size>(1,1)</size>
+				</value>
+			</li>
+			<li Class="PatchOperationInsert">
+				<xpath>*/ThingDef[defName = "Ship_Beam"]/passability</xpath>
+				<value>
+					<pathCost>70</pathCost>
+				</value>
+			</li>
+			<li Class="PatchOperationInsert">
+				<xpath>*/ThingDef[defName = "Ship_Beam"]/statBases/Flammability</xpath>
+				<value>
+					<Mass>1000</Mass>
+				</value>
+			</li>
+			<li Class="PatchOperationInsert">
+				<xpath>*/ThingDef[defName = "Ship_Beam"]/graphicData/graphicClass</xpath>
+				<value>
+					<linkType>Basic</linkType>
+					<linkFlags>
+						<li>Custom1</li>
+					</linkFlags>
+				</value>
+			</li>
+			<li Class="PatchOperationInsert">
+				<xpath>*/ThingDef[defName = "Ship_Beam"]/thingClass</xpath>
+				<value>
+					<uiIconPath>sd_spaceship/menu_icons/sd_spaceship_dragable_beam_menuicon</uiIconPath>
+				</value>
+			</li>
+			<li Class="PatchOperationInsert">
+				<xpath>*/ThingDef[defName = "Ship_Beam"]/constructionSkillPrerequisite</xpath>
+				<value>
+					<minifiedDef>MinifiedFurniture</minifiedDef>
+					<placingDraggableDimensions>1</placingDraggableDimensions>
+					<selectable>true</selectable>
+					<rotatable>true</rotatable>
+				</value>
+			</li>
+			
 	<!-- costs -->
 	
-	<Operation Class="PatchOperationReplace">
-		<xpath>*/ThingDef[defName = "Ship_Beam"]/costList/Steel</xpath>
-		<value>
-			<Steel>40</Steel>
-		</value>
+			<li Class="PatchOperationReplace">
+				<xpath>*/ThingDef[defName = "Ship_Beam"]/costList/Steel</xpath>
+				<value>
+					<Steel>40</Steel>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>*/ThingDef[defName = "Ship_Beam"]/costList/Plasteel</xpath>
+				<value>
+					<Plasteel>30</Plasteel>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>*/ThingDef[defName = "Ship_Beam"]/costList/Component</xpath>
+				<value>
+					<Component>2</Component>
+				</value>
+			</li>				
+			</operations>
 	</Operation>
 	
-	<Operation Class="PatchOperationReplace">
-		<xpath>*/ThingDef[defName = "Ship_Beam"]/costList/Plasteel</xpath>
-		<value>
-			<Plasteel>30</Plasteel>
-		</value>
+	<!-- if ship refactored is Not loaded do x -->
+	
+	<!--
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="ModCheck.isModLoaded">
+				<modName>[XND] Ship Parts Refactored</modName>
+				<yourMod>[sd] spaceship</yourMod>
+				<success>Invert</success>
+				<customMessageSuccess>[XND] Ship Parts Refactored and [sd] spaceship are loaded.</customMessageSuccess>
+			</li>
+			<li Class="ModCheck.FindFile">
+						<modName>Core</modName>
+						<file>Buildings_Ship.xml</file>
+			</li>
+			</operations>
 	</Operation>
 	
-	<Operation Class="PatchOperationReplace">
-		<xpath>*/ThingDef[defName = "Ship_Beam"]/costList/Component</xpath>
-		<value>
-			<Component>2</Component>
-		</value>
-	</Operation>
+	-->
+
+
 	
 	<!--========================= vanilla Ship_CryptosleepCasket =============================-->
 	
-	<Operation Class="PatchOperationReplace">
-		<xpath>*/ThingDef[defName = "Ship_CryptosleepCasket"]/interactionCellOffset</xpath>
-		<value>
-			<interactionCellOffset>(0,0,0)</interactionCellOffset>
-		</value>
+	<!-- always do -->
+	
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="ModCheck.FindFile">
+						<modName>Core</modName>
+						<file>Buildings_Ship.xml</file>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>*/ThingDef[defName = "Ship_CryptosleepCasket"]/interactionCellOffset</xpath>
+				<value>
+					<interactionCellOffset>(0,0,0)</interactionCellOffset>
+				</value>
+			</li>
+			<li Class="PatchOperationRemove">
+				<xpath>*/ThingDef[defName = "Ship_CryptosleepCasket"]/placeWorkers/li[1]</xpath> <!-- <li>PlaceWorker_HeadOnShipBeam</li>  removed for easier placement -->
+			</li>
+			
+			<li Class="PatchOperationInsert">
+				<xpath>*/ThingDef[defName = "Ship_CryptosleepCasket"]/constructionSkillPrerequisite</xpath>
+				<value>
+					<minifiedDef>MinifiedFurniture</minifiedDef>
+				</value>
+			</li>
+			<li Class="PatchOperationInsert">
+				<xpath>*/ThingDef[defName = "Ship_CryptosleepCasket"]/statBases/Flammability</xpath>
+				<value>
+					<Mass>1000</Mass>
+				</value>
+			</li>			
+			</operations>
 	</Operation>
 	
+	<!-- if ship refactored is loaded -->
+
 	
-	<Operation Class="PatchOperationRemove">
-		<xpath>*/ThingDef[defName = "Ship_CryptosleepCasket"]/placeWorkers/li[1]</xpath> <!-- <li>PlaceWorker_HeadOnShipBeam</li>  removed for easier placement -->
-	</Operation>
-	
-	
-	<Operation Class="PatchOperationInsert">
-		<xpath>*/ThingDef[defName = "Ship_CryptosleepCasket"]/constructionSkillPrerequisite</xpath>
-		<value>
-			<minifiedDef>MinifiedFurniture</minifiedDef>
-		</value>
-	</Operation>
-	
-	<Operation Class="PatchOperationInsert">
-		<xpath>*/ThingDef[defName = "Ship_CryptosleepCasket"]/statBases/Flammability</xpath>
-		<value>
-			<Mass>1000</Mass>
-		</value>
-	</Operation>
 	
 	<!--========================= vanilla size adjustments  - moved to other xml file!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 	

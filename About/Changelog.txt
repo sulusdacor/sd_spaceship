@@ -64,3 +64,9 @@ personal changelog for mod "[sd] spaceship"
 - 15/01/2018
 
 	- added modsync
+
+- 27/01/2018
+
+	- added modchecker
+	- added patches for make it compatible with Ship Parts Refactored
+	- updated version number to 1.0.2 and added in about file
