@@ -70,3 +70,15 @@ personal changelog for mod "[sd] spaceship"
 	- added modchecker
 	- added patches for make it compatible with Ship Parts Refactored
 	- updated version number to 1.0.2 and added in about file
+
+- 08/04/2018
+
+	- reactor to 10k
+	- flammability of vanilla parts to 10% even without ship part refactored
+	- added compatibility with Sos mod
+
+- 09/04/2018
+
+	Ver.: b18-1.0.3
+	- fammability of mod parts to 10%
+	- added holdroff to my 1x1 fill part

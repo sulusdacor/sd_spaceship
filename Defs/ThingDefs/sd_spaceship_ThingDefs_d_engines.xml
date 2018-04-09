@@ -19,7 +19,7 @@
       <WorkToBuild>15000</WorkToBuild>
       <MaxHitPoints>200</MaxHitPoints>
 	  <Mass>2000</Mass>
-      <Flammability>1.0</Flammability>
+      <Flammability>0.1</Flammability>
     </statBases>
     <tickerType>Normal</tickerType>
     <description>An antimatter-powered engine capable of launching a ship into orbit and on interstellar trajectories.</description>

@@ -21,7 +21,7 @@
     <statBases>
       <WorkToBuild>2000</WorkToBuild>
       <MaxHitPoints>200</MaxHitPoints>
-      <Flammability>1.0</Flammability>
+      <Flammability>0.1</Flammability>
     </statBases>
     <tickerType>Normal</tickerType>
     <description>A structural beam around which a ship can be constructed.</description>
@@ -63,7 +63,7 @@
       <WorkToBuild>6000</WorkToBuild>
       <MaxHitPoints>400</MaxHitPoints>
 	  <Mass>4000</Mass>
-      <Flammability>1.0</Flammability>
+      <Flammability>0.1</Flammability>
     </statBases>
     <tickerType>Normal</tickerType>
     <description>A structural beam around which a ship can be constructed.</description>
@@ -105,7 +105,7 @@
       <WorkToBuild>6000</WorkToBuild>
       <MaxHitPoints>400</MaxHitPoints>
 	  <Mass>6000</Mass>
-      <Flammability>1.0</Flammability>
+      <Flammability>0.1</Flammability>
     </statBases>
     <tickerType>Normal</tickerType>
     <description>A structural beam around which a ship can be constructed.</description>
@@ -147,7 +147,7 @@
       <WorkToBuild>6000</WorkToBuild>
       <MaxHitPoints>400</MaxHitPoints>
 	  <Mass>9000</Mass>
-      <Flammability>1.0</Flammability>
+      <Flammability>0.1</Flammability>
     </statBases>
     <tickerType>Normal</tickerType>
     <description>A structural beam around which a ship can be constructed.</description>
