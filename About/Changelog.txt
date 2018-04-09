@@ -82,3 +82,4 @@ personal changelog for mod "[sd] spaceship"
 	Ver.: b18-1.0.3
 	- fammability of mod parts to 10%
 	- added holdroff to my 1x1 fill part
+	- patchfile rearanging, since interior casket did not seem to work

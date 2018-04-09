@@ -187,6 +187,15 @@
 					<Flammability>0.1</Flammability>
 				</value>
 			</li>
+
+				<!-- 1x1 part -->
+				
+			<li Class="PatchOperationInsert">
+				<xpath>*/ThingDef[defName = "sd_spaceship_fill1x1_b"]/rotatable</xpath>
+				<value>
+					<holdsRoof>true</holdsRoof>
+				</value>
+			</li>
 			
 			<!-- vanilla size adjustments to a17 values -->
 			
@@ -239,6 +248,17 @@
 				</value>
 			</li>
 			
+			</operations>
+	</Operation>
+	
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="ModCheck.FindFile">
+						<modName>Save Our Ship</modName>
+						<file>Buildings_Ship.xml</file>
+			</li>
+			
 			<!-- interior casket stuff -->
 			
 			<li Class="PatchOperationReplace">
@@ -249,7 +269,7 @@
 			</li>
 			
 			<li Class="PatchOperationInsert">
-				<xpath>*/ThingDef[defName = "ShipInside_CryptosleepCasket"]/constructionSkillPrerequisite</xpath>
+				<xpath>*/ThingDef[defName = "ShipInside_CryptosleepCasket"]/thingClass</xpath>
 				<value>
 					<minifiedDef>MinifiedFurniture</minifiedDef>
 				</value>
@@ -260,16 +280,12 @@
 					<Mass>1000</Mass>
 				</value>
 			</li>
-
-				<!-- 1x1 part -->
-				
-			<li Class="PatchOperationInsert">
-				<xpath>*/ThingDef[defName = "sd_spaceship_fill1x1_b"]/rotatable</xpath>
+			<li Class="PatchOperationReplace">
+				<xpath>*/ThingDef[defName = "ShipInside_CryptosleepCasket"]/statBases/Flammability</xpath>
 				<value>
-					<holdsRoof>true</holdsRoof>
+					<Flammability>0.1</Flammability>
 				</value>
 			</li>
-			
 			</operations>
 	</Operation>
 	
