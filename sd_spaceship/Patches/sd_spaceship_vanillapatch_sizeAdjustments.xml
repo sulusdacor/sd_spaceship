@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	
+	<!--========================= vanilla size adjustments to a17 values =============================-->
+	
+	<Operation Class="PatchOperationReplace">
+		<xpath>*/ThingDef[defName = "Ship_ComputerCore"]/graphicData/drawSize</xpath>
+		<value>
+			<drawSize>(3,3)</drawSize>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationReplace">
+		<xpath>*/ThingDef[defName = "Ship_ComputerCore"]/size</xpath>
+		<value>
+			<size>(1,1)</size>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationReplace">
+		<xpath>*/ThingDef[defName = "Ship_Reactor"]/graphicData/drawSize</xpath>
+		<value>
+			<drawSize>(7,7)</drawSize>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationReplace">
+		<xpath>*/ThingDef[defName = "Ship_Reactor"]/size</xpath>
+		<value>
+			<size>(5,5)</size>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationReplace">
+		<xpath>*/ThingDef[defName = "Ship_Engine"]/graphicData/drawSize</xpath>
+		<value>
+			<drawSize>(4,5)</drawSize>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationReplace">
+		<xpath>*/ThingDef[defName = "Ship_Engine"]/size</xpath>
+		<value>
+			<size>(2,3)</size>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationReplace">
+		<xpath>*/ThingDef[defName = "Ship_SensorCluster"]/graphicData/drawSize</xpath>
+		<value>
+			<drawSize>(2,2)</drawSize>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationReplace">
+		<xpath>*/ThingDef[defName = "Ship_SensorCluster"]/size</xpath>
+		<value>
+			<size>(1,1)</size>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationReplace">
+		<xpath>*/ThingDef[defName = "Ship_CryptosleepCasket"]/graphicData/drawSize</xpath>
+		<value>
+			<drawSize>(2,3)</drawSize>
+		</value>
+	</Operation>
+
+</Patch>
