@@ -3,60 +3,69 @@
 	
 	<!--========================= vanilla size adjustments to a17 values =============================-->
 	
-	<Operation Class="PatchOperationReplace">
-		<xpath>*/ThingDef[defName = "Ship_ComputerCore"]/graphicData/drawSize</xpath>
-		<value>
-			<drawSize>(3,3)</drawSize>
-		</value>
-	</Operation>
+	<!-- if [XND] Ship Parts Refactored is Not loaded do size adjustments -->
 	
-	<Operation Class="PatchOperationReplace">
-		<xpath>*/ThingDef[defName = "Ship_ComputerCore"]/size</xpath>
-		<value>
-			<size>(1,1)</size>
-		</value>
-	</Operation>
-	
-	<Operation Class="PatchOperationReplace">
-		<xpath>*/ThingDef[defName = "Ship_Reactor"]/graphicData/drawSize</xpath>
-		<value>
-			<drawSize>(7,7)</drawSize>
-		</value>
-	</Operation>
-	
-	<Operation Class="PatchOperationReplace">
-		<xpath>*/ThingDef[defName = "Ship_Reactor"]/size</xpath>
-		<value>
-			<size>(5,5)</size>
-		</value>
-	</Operation>
-	
-	<Operation Class="PatchOperationReplace">
-		<xpath>*/ThingDef[defName = "Ship_Engine"]/graphicData/drawSize</xpath>
-		<value>
-			<drawSize>(4,5)</drawSize>
-		</value>
-	</Operation>
-	
-	<Operation Class="PatchOperationReplace">
-		<xpath>*/ThingDef[defName = "Ship_Engine"]/size</xpath>
-		<value>
-			<size>(2,3)</size>
-		</value>
-	</Operation>
-	
-	<Operation Class="PatchOperationReplace">
-		<xpath>*/ThingDef[defName = "Ship_SensorCluster"]/graphicData/drawSize</xpath>
-		<value>
-			<drawSize>(2,2)</drawSize>
-		</value>
-	</Operation>
-	
-	<Operation Class="PatchOperationReplace">
-		<xpath>*/ThingDef[defName = "Ship_SensorCluster"]/size</xpath>
-		<value>
-			<size>(1,1)</size>
-		</value>
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="ModCheck.isModLoaded">
+				<modName>[XND] Ship Parts Refactored</modName>
+				<yourMod>[sd] spaceship</yourMod>
+				<success>Invert</success>
+			</li>
+			<li Class="ModCheck.FindFile">
+						<modName>Core</modName>
+						<file>Buildings_Ship.xml</file>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>*/ThingDef[defName = "Ship_ComputerCore"]/graphicData/drawSize</xpath>
+				<value>
+					<drawSize>(3,3)</drawSize>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>*/ThingDef[defName = "Ship_ComputerCore"]/size</xpath>
+				<value>
+					<size>(1,1)</size>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>*/ThingDef[defName = "Ship_Reactor"]/graphicData/drawSize</xpath>
+				<value>
+					<drawSize>(7,7)</drawSize>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>*/ThingDef[defName = "Ship_Reactor"]/size</xpath>
+				<value>
+					<size>(5,5)</size>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>*/ThingDef[defName = "Ship_Engine"]/graphicData/drawSize</xpath>
+				<value>
+					<drawSize>(4,5)</drawSize>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>*/ThingDef[defName = "Ship_Engine"]/size</xpath>
+				<value>
+					<size>(2,3)</size>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>*/ThingDef[defName = "Ship_SensorCluster"]/graphicData/drawSize</xpath>
+				<value>
+					<drawSize>(2,2)</drawSize>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>*/ThingDef[defName = "Ship_SensorCluster"]/size</xpath>
+				<value>
+					<size>(1,1)</size>
+				</value>
+			</li>
+			</operations>
 	</Operation>
 	
 	<Operation Class="PatchOperationReplace">

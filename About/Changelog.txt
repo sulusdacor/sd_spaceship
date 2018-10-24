@@ -65,6 +65,7 @@ personal changelog for mod "[sd] spaceship"
 
 	- added modsync
 
+<<<<<<< HEAD
 - 24/10/2018
 
 	- rimworld 1.0 update
@@ -73,3 +74,23 @@ personal changelog for mod "[sd] spaceship"
 	- replaced textures with old versions, added sizeadjustments for the missing stuff
 	- about file update
 	- added construction skill requirement for parts added by the mod (same as beam lv5)
+=======
+- 27/01/2018
+
+	- added modchecker
+	- added patches for make it compatible with Ship Parts Refactored
+	- updated version number to 1.0.2 and added in about file
+
+- 08/04/2018
+
+	- reactor to 10k
+	- flammability of vanilla parts to 10% even without ship part refactored
+	- added compatibility with Sos mod
+
+- 09/04/2018
+
+	Ver.: b18-1.0.3
+	- fammability of mod parts to 10%
+	- added holdroff to my 1x1 fill part
+	- patchfile rearanging, since interior casket did not seem to work
+>>>>>>> 374fdf65ecba119da6818a183ebdd46478651a74

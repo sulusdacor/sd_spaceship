@@ -1,0 +1,294 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+ <!--================================ patches for vanilla ship stuff (cryo + beam) ======================================-->
+ 
+	<!--========================= no sequence tests! (conflicts if mods remove these vanilla lines) =============================-->
+	
+		<!-- if SOS and [sd] spaceship is loaded message -->
+		
+		<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+			<operations>
+				<li Class="ModCheck.isModLoaded">
+					<modName>Save Our Ship</modName>
+					<yourMod>[sd] spaceship</yourMod>
+					<customMessageSuccess>Found Save Our Ship Mod together with [sd] spaceship</customMessageSuccess>
+				</li>				
+			</operations>
+		</Operation>
+	
+	<!--========================= vanilla Ship_Beam =============================-->
+	
+	<!-- always do -->
+	
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="ModCheck.FindFile">
+						<modName>Save Our Ship</modName>
+						<file>Buildings_Ship.xml</file>
+			</li>
+			
+			<!-- vanilla Ship_Beam  -->
+			
+			<li Class="PatchOperationRemove">
+				<xpath>*/ThingDef[defName = "Ship_Beam"]/graphicData/drawSize</xpath>
+			</li>
+			<li Class="PatchOperationRemove">
+				<xpath>*/ThingDef[defName = "Ship_Beam"]/graphicData/damageData</xpath>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>*/ThingDef[defName = "Ship_Beam"]/statBases/WorkToBuild</xpath>
+				<value>
+					<WorkToBuild>2000</WorkToBuild>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>*/ThingDef[defName = "Ship_Beam"]/statBases/MaxHitPoints</xpath>
+				<value>
+					<MaxHitPoints>200</MaxHitPoints>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>*/ThingDef[defName = "Ship_Beam"]/graphicData/texPath</xpath>
+				<value>
+					<texPath>sd_spaceship/dragable_beam/sd_spaceship_beamlink</texPath>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>*/ThingDef[defName = "Ship_Beam"]/graphicData/graphicClass</xpath>
+				<value>
+					<graphicClass>Graphic_Single</graphicClass>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>*/ThingDef[defName = "Ship_Beam"]/size</xpath>
+				<value>
+					<size>(1,1)</size>
+				</value>
+			</li>
+			<li Class="PatchOperationInsert">
+				<xpath>*/ThingDef[defName = "Ship_Beam"]/statBases/Flammability</xpath>
+				<value>
+					<Mass>1000</Mass>
+				</value>
+			</li>
+			<li Class="PatchOperationInsert">
+				<xpath>*/ThingDef[defName = "Ship_Beam"]/graphicData/graphicClass</xpath>
+				<value>
+					<linkType>Basic</linkType>
+					<linkFlags>
+						<li>Custom1</li>
+					</linkFlags>
+				</value>
+			</li>
+			<li Class="PatchOperationInsert">
+				<xpath>*/ThingDef[defName = "Ship_Beam"]/thingClass</xpath>
+				<value>
+					<uiIconPath>sd_spaceship/menu_icons/sd_spaceship_dragable_beam_menuicon</uiIconPath>
+					<minifiedDef>MinifiedFurniture</minifiedDef>
+					<placingDraggableDimensions>2</placingDraggableDimensions>
+					<selectable>true</selectable>
+					<rotatable>true</rotatable>
+				</value>
+			</li>
+			
+	<!-- costs -->
+	
+			<li Class="PatchOperationReplace">
+				<xpath>*/ThingDef[defName = "Ship_Beam"]/costList/Steel</xpath>
+				<value>
+					<Steel>40</Steel>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>*/ThingDef[defName = "Ship_Beam"]/costList/Plasteel</xpath>
+				<value>
+					<Plasteel>30</Plasteel>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>*/ThingDef[defName = "Ship_Beam"]/costList/Component</xpath>
+				<value>
+					<Component>2</Component>
+				</value>
+			</li>	
+
+				<!-- reactor output to 10k -->
+	
+			<li Class="PatchOperationReplace">
+				<xpath>*/ThingDef[defName = "Ship_Reactor"]/comps/li[@Class = "CompProperties_Power"]/basePowerConsumption</xpath>
+				<value>
+					<basePowerConsumption>-10000</basePowerConsumption>
+				</value>
+			</li>
+	
+			<!-- vanilla Ship_CryptosleepCasket -->
+	
+			<li Class="PatchOperationReplace">
+				<xpath>*/ThingDef[defName = "Ship_CryptosleepCasket"]/interactionCellOffset</xpath>
+				<value>
+					<interactionCellOffset>(0,0,0)</interactionCellOffset>
+				</value>
+			</li>
+			<li Class="PatchOperationRemove">
+				<xpath>*/ThingDef[defName = "Ship_CryptosleepCasket"]/placeWorkers/li[1]</xpath> <!-- <li>PlaceWorker_HeadOnShipBeam</li>  removed for easier placement -->
+			</li>
+			
+			<li Class="PatchOperationInsert">
+				<xpath>*/ThingDef[defName = "Ship_CryptosleepCasket"]/constructionSkillPrerequisite</xpath>
+				<value>
+					<minifiedDef>MinifiedFurniture</minifiedDef>
+				</value>
+			</li>
+			<li Class="PatchOperationInsert">
+				<xpath>*/ThingDef[defName = "Ship_CryptosleepCasket"]/statBases/Flammability</xpath>
+				<value>
+					<Mass>1000</Mass>
+				</value>
+			</li>	
+
+			<!-- vanilla flamme ability adjust  -->
+
+			<li Class="PatchOperationReplace">
+				<xpath>*/ThingDef[defName = "Ship_Beam"]/statBases/Flammability</xpath>
+				<value>
+					<Flammability>0.1</Flammability>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>*/ThingDef[defName = "Ship_ComputerCore"]/statBases/Flammability</xpath>
+				<value>
+					<Flammability>0.1</Flammability>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>*/ThingDef[defName = "Ship_Reactor"]/statBases/Flammability</xpath>
+				<value>
+					<Flammability>0.1</Flammability>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>*/ThingDef[defName = "Ship_Engine"]/statBases/Flammability</xpath>
+				<value>
+					<Flammability>0.1</Flammability>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>*/ThingDef[defName = "Ship_SensorCluster"]/statBases/Flammability</xpath>
+				<value>
+					<Flammability>0.1</Flammability>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>*/ThingDef[defName = "Ship_CryptosleepCasket"]/statBases/Flammability</xpath>
+				<value>
+					<Flammability>0.1</Flammability>
+				</value>
+			</li>
+
+				<!-- 1x1 part -->
+				
+			<li Class="PatchOperationInsert">
+				<xpath>*/ThingDef[defName = "sd_spaceship_fill1x1_b"]/rotatable</xpath>
+				<value>
+					<holdsRoof>true</holdsRoof>
+				</value>
+			</li>
+			
+			<!-- vanilla size adjustments to a17 values -->
+			
+			<li Class="PatchOperationReplace">
+				<xpath>*/ThingDef[defName = "Ship_ComputerCore"]/graphicData/drawSize</xpath>
+				<value>
+					<drawSize>(3,3)</drawSize>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>*/ThingDef[defName = "Ship_ComputerCore"]/size</xpath>
+				<value>
+					<size>(1,1)</size>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>*/ThingDef[defName = "Ship_Reactor"]/graphicData/drawSize</xpath>
+				<value>
+					<drawSize>(7,7)</drawSize>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>*/ThingDef[defName = "Ship_Reactor"]/size</xpath>
+				<value>
+					<size>(5,5)</size>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>*/ThingDef[defName = "Ship_Engine"]/graphicData/drawSize</xpath>
+				<value>
+					<drawSize>(4,5)</drawSize>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>*/ThingDef[defName = "Ship_Engine"]/size</xpath>
+				<value>
+					<size>(2,3)</size>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>*/ThingDef[defName = "Ship_SensorCluster"]/graphicData/drawSize</xpath>
+				<value>
+					<drawSize>(2,2)</drawSize>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>*/ThingDef[defName = "Ship_SensorCluster"]/size</xpath>
+				<value>
+					<size>(1,1)</size>
+				</value>
+			</li>
+			
+			</operations>
+	</Operation>
+	
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="ModCheck.FindFile">
+						<modName>Save Our Ship</modName>
+						<file>Buildings_Ship.xml</file>
+			</li>
+			
+			<!-- interior casket stuff -->
+			
+			<li Class="PatchOperationReplace">
+				<xpath>*/ThingDef[defName = "ShipInside_CryptosleepCasket"]/interactionCellOffset</xpath>
+				<value>
+					<interactionCellOffset>(0,0,0)</interactionCellOffset>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationInsert">
+				<xpath>*/ThingDef[defName = "ShipInside_CryptosleepCasket"]/thingClass</xpath>
+				<value>
+					<minifiedDef>MinifiedFurniture</minifiedDef>
+				</value>
+			</li>
+			<li Class="PatchOperationInsert">
+				<xpath>*/ThingDef[defName = "ShipInside_CryptosleepCasket"]/statBases/Flammability</xpath>
+				<value>
+					<Mass>1000</Mass>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>*/ThingDef[defName = "ShipInside_CryptosleepCasket"]/statBases/Flammability</xpath>
+				<value>
+					<Flammability>0.1</Flammability>
+				</value>
+			</li>
+			</operations>
+	</Operation>
+	
+	
+
+</Patch>
