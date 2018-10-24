@@ -21,7 +21,7 @@
       <WorkToBuild>8000</WorkToBuild>
       <MaxHitPoints>200</MaxHitPoints>
 	  <Mass>2000</Mass>
-      <Flammability>1.0</Flammability>
+      <Flammability>0</Flammability>
     </statBases>
     <tickerType>Normal</tickerType>
     <description>A cryptosleep casket hardened against the dangers of space. Capable of maintaining a person in cryptosleep for centuries in a space environment and surviving atmospheric re-entry.</description>
@@ -46,8 +46,8 @@
     <costList>
 		<Steel>200</Steel>
 		<Uranium>20</Uranium>
-		<Component>10</Component>
-		<AdvancedComponent>5</AdvancedComponent>
+		<ComponentIndustrial>10</ComponentIndustrial>
+		<ComponentSpacer>5</ComponentSpacer>
     </costList>
     <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
 	<selectable>true</selectable>

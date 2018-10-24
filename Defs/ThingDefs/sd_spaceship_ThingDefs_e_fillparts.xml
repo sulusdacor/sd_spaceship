@@ -21,7 +21,7 @@
     <statBases>
       <WorkToBuild>2000</WorkToBuild>
       <MaxHitPoints>200</MaxHitPoints>
-      <Flammability>1.0</Flammability>
+      <Flammability>0</Flammability>
     </statBases>
     <tickerType>Normal</tickerType>
     <description>A structural beam around which a ship can be constructed.</description>
@@ -36,7 +36,7 @@
     <costList>
       <Steel>40</Steel>
       <Plasteel>10</Plasteel>
-      <Component>2</Component>
+      <ComponentIndustrial>2</ComponentIndustrial>
     </costList>
     <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
 	<staticSunShadowHeight>1.0</staticSunShadowHeight>
@@ -78,7 +78,7 @@
     <costList>
       <Steel>160</Steel>
       <Plasteel>40</Plasteel>
-      <Component>8</Component>
+      <ComponentIndustrial>8</ComponentIndustrial>
     </costList>
     <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
 	<staticSunShadowHeight>1.0</staticSunShadowHeight>
@@ -120,7 +120,7 @@
     <costList>
       <Steel>240</Steel>
       <Plasteel>60</Plasteel>
-      <Component>12</Component>
+      <ComponentIndustrial>12</ComponentIndustrial>
     </costList>
     <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
 	<staticSunShadowHeight>1.0</staticSunShadowHeight>
@@ -162,7 +162,7 @@
     <costList>
       <Steel>360</Steel>
       <Plasteel>90</Plasteel>
-      <Component>18</Component>
+      <ComponentIndustrial>18</ComponentIndustrial>
     </costList>
     <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
 	<staticSunShadowHeight>1.0</staticSunShadowHeight>

@@ -101,7 +101,10 @@
 	<Operation Class="PatchOperationInsert">
 		<xpath>*/ThingDef[defName = "Ship_Beam"]/constructionSkillPrerequisite</xpath>
 		<value>
-			<minifiedDef>MinifiedFurniture</minifiedDef>
+			<minifiedDef>MinifiedThing</minifiedDef>
+			<thingCategories>
+				<li>BuildingsSpecial</li>
+			</thingCategories>
 			<placingDraggableDimensions>1</placingDraggableDimensions>
 			<selectable>true</selectable>
 			<rotatable>true</rotatable>
@@ -125,9 +128,9 @@
 	</Operation>
 	
 	<Operation Class="PatchOperationReplace">
-		<xpath>*/ThingDef[defName = "Ship_Beam"]/costList/Component</xpath>
+		<xpath>*/ThingDef[defName = "Ship_Beam"]/costList/ComponentIndustrial</xpath>
 		<value>
-			<Component>2</Component>
+			<ComponentIndustrial>2</ComponentIndustrial>
 		</value>
 	</Operation>
 	
@@ -149,7 +152,10 @@
 	<Operation Class="PatchOperationInsert">
 		<xpath>*/ThingDef[defName = "Ship_CryptosleepCasket"]/constructionSkillPrerequisite</xpath>
 		<value>
-			<minifiedDef>MinifiedFurniture</minifiedDef>
+			<minifiedDef>MinifiedThing</minifiedDef>
+			<thingCategories>
+				<li>BuildingsSpecial</li>
+			</thingCategories>
 		</value>
 	</Operation>
 	

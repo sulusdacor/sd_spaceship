@@ -58,5 +58,12 @@
 			<size>(1,1)</size>
 		</value>
 	</Operation>
+	
+	<Operation Class="PatchOperationReplace">
+		<xpath>*/ThingDef[defName = "Ship_CryptosleepCasket"]/graphicData/drawSize</xpath>
+		<value>
+			<drawSize>(2,3)</drawSize>
+		</value>
+	</Operation>
 
 </Patch>
