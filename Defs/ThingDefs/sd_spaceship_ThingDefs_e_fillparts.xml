@@ -42,6 +42,9 @@
 	<staticSunShadowHeight>1.0</staticSunShadowHeight>
 	<selectable>true</selectable>
 	<rotatable>true</rotatable>
+		<building>
+			<shipPart>true</shipPart>
+		</building>
   </ThingDef>
   
   <ThingDef ParentName="sd_spaceship_shippart_Base">
@@ -84,6 +87,9 @@
 	<staticSunShadowHeight>1.0</staticSunShadowHeight>
 	<selectable>true</selectable>
 	<rotatable>true</rotatable>
+		<building>
+			<shipPart>true</shipPart>
+		</building>
   </ThingDef>
   
   <ThingDef ParentName="sd_spaceship_shippart_Base">
@@ -126,6 +132,9 @@
 	<staticSunShadowHeight>1.0</staticSunShadowHeight>
 	<selectable>true</selectable>
 	<rotatable>true</rotatable>
+		<building>
+			<shipPart>true</shipPart>
+		</building>
   </ThingDef>
   
   <ThingDef ParentName="sd_spaceship_shippart_Base">
@@ -168,6 +177,9 @@
 	<staticSunShadowHeight>1.0</staticSunShadowHeight>
 	<selectable>true</selectable>
 	<rotatable>true</rotatable>
+		<building>
+			<shipPart>true</shipPart>
+		</building>
   </ThingDef>
 
 </Defs>

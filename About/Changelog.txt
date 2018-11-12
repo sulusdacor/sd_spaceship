@@ -73,3 +73,7 @@ personal changelog for mod "[sd] spaceship"
 	- replaced textures with old versions, added sizeadjustments for the missing stuff
 	- about file update
 	- added construction skill requirement for parts added by the mod (same as beam lv5)
+
+- 12/11/2018
+
+	- fixed an issue with sos mod not saving id properly (removed double comp from abstract)

@@ -41,6 +41,9 @@
     <staticSunShadowHeight>1.0</staticSunShadowHeight>
 	<selectable>true</selectable>
 	<rotatable>true</rotatable>
+		<building>
+			<shipPart>true</shipPart>
+		</building>
   </ThingDef>
 
 </Defs>

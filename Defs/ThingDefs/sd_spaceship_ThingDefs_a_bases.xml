@@ -24,9 +24,6 @@
 	<statBases>
 		<Mass>1000</Mass>
 	</statBases>
-	<building>
-      <shipPart>true</shipPart>
-    </building>
 	<placeWorkers>
       <li>PlaceWorker_NotUnderRoof</li>
     </placeWorkers>
@@ -42,13 +39,6 @@
     <fillPercent>1</fillPercent>
     <blockLight>False</blockLight>
 	<designationCategory>Ship</designationCategory>
-	<comps>
-      <li Class="CompProperties_Power">
-        <compClass>CompPowerTransmitter</compClass>
-        <transmitsPower>true</transmitsPower>
-      </li>
-      <li Class="CompProperties_ShipPart"/>
-    </comps>
 	<thingCategories>
       <li>BuildingsSpecial</li>
     </thingCategories>
